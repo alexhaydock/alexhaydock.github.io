@@ -1,45 +1,41 @@
 # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
-name: Your Name
-email: you@example.com
+name: Alex Haydock
+email: alex@alexhaydock.co.uk
 description: > # this means to ignore newlines until "url:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-footer_text: >
-  Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-
+footer_text: # I don't want any
 url:  # the base hostname & protocol for your site
-baseurl: /al-folio # the subpath of your site, e.g. /blog/
+#baseurl: / # the subpath of your site, e.g. /blog/
 last_updated: # leave blank if you don't want to display last updated
 
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
-github_username: # your GitHub user name
-twitter_username: # your Twitter handle
+github_username: alexhaydock # your GitHub user name
+twitter_username: ajhdock # your Twitter handle
 linkedin_username: # your LinkedIn user name
 scholar_userid: # your Google Scholar ID
 orcid_id: # your ORCID ID
-medium_username: # your Medium username
+medium_username: alexhaydock # your Medium username
 quora_username: # your Quora username
 
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  I can also be contacted via <a href="https://signal.org/" target="_blank">Signal</a> for encrypted messaging. Please email me to ask for my Signal ID.
 
-google_analytics: UA-XXXXXXXXX # out your google-analytics code
+#google_analytics: UA-XXXXXXXXX # out your google-analytics code
 
 # -----------------------------------------------------------------------------
 # Blog
 # -----------------------------------------------------------------------------
-blog_name: al-folio
-blog_description: a simple whitespace theme for academics
+blog_name: tech posts
+blog_description: A selection of various tech projects and ramblings.
 
 # Pagination
 paginate: 4
-permalink: /blog/:year/:title/
-paginate_path: /blog/page:num/
+permalink: /tech/:title/
+paginate_path: /tech/page:num/
 
 text:
   pagination:
@@ -47,7 +43,7 @@ text:
     older: 'Older'
 
 # Comments
-disqus_shortname: al-folio # put your disqus shortname
+#disqus_shortname: al-folio # put your disqus shortname
 
 # Optional features
 show_social_icons:  false
@@ -63,11 +59,16 @@ collections:
       layout: post
     output: true
     permalink: /news/:path/
-  projects:
-    output: true
-    permalink: /projects/:path/
+# Projects collection has been disabled by deleting the folder. To re-enable
+# it if I want in future, it seems like I could just recreate the _projects/
+# folder using the example content from the git repo (and also put projects.md
+# back in the _pages/ directory). https://github.com/alshedivat/al-folio
+#
+#  projects:
+#    output: true
+#    permalink: /projects/:path/
 
-news_limit: 5
+news_limit: 10
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
@@ -89,9 +90,13 @@ plugins:
     - jemoji
 
 # Jekyll-Scholar
+
+# To begin re-using the Publications tab, I'd need to re-add publications.md and
+# the _bibliography folder.
+
 scholar:
 
-  last_name: Einstein
+  last_name: Haydock
 
   style: apa
   locale: en
