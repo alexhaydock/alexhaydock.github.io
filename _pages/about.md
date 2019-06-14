@@ -1,7 +1,7 @@
 ---
 layout: about
 permalink: /
-title: Alex Haydock
+title: <strong>Alex</strong> Haydock
 description: Digital security and privacy consultant.
 
 profile:
