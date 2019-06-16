@@ -76,7 +76,8 @@ news_limit: 10
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+#highlighter: pygments ## No longer supported by GitHub Pages
+highlighter: rouge
 
 # Includes & excludes
 include: ['_pages']
