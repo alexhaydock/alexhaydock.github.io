@@ -119,7 +119,7 @@ scholar:
   query: "@*"
 
 # -----------------------------------------------------------------------------
-# Other settings
+# Other settings (these affect the variables used in hemline.html)
 # -----------------------------------------------------------------------------
 jquery_version: "1.12.4"
 katex_version: "0.9.0"
