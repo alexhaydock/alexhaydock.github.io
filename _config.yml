@@ -48,7 +48,7 @@ text:
 # Optional features
 show_social_icons:  false
 enable_anchorjs:    false
-enable_katex:       true
+enable_katex:       false
 
 # -----------------------------------------------------------------------------
 # Collections
