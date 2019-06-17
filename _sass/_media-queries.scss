@@ -50,6 +50,10 @@
   .img_row {
      height: $img-height/3;
   }
+  .img_small {
+     height: $img-height/3;
+     width: $img-width/3;
+  }
   .col {
       padding: $img-spacing/3;
   }
@@ -62,6 +66,10 @@
   .img_row {
      height: $img-height/1.5;
   }
+  .img_small {
+    height: $img-height/1.5;
+    width: $img-width/1.5;
+  }
   .col {
       padding: $img-spacing/1.5;
   }
@@ -73,6 +81,10 @@
   }
   .img_row {
      height: $img-height;
+  }
+  .img_small {
+    height: $img-height;
+    width: $img-width;
   }
   .col {
       padding: $img-spacing;

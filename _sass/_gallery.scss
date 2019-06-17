@@ -16,6 +16,14 @@ figcaption {
     overflow: hidden;
     box-sizing:border-box;
 }
+.img_small {
+    /* I've addedd this section so I can use full sized small images */
+    /* height: $img-height; */
+    width: $img-width;
+    overflow: hidden;
+    box-sizing:border-box;
+    margin: auto;
+}
 .col {
     width: 100%;
     height: 100%;

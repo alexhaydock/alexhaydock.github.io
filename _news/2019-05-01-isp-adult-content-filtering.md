@@ -7,7 +7,7 @@ inline: false
 > [I] am concerned to read the report, Collateral Damage in the War Against Online Harms, published last week by Top10VPN and the Open Rights Group, suggesting that these filters are potentially harmful rather than advantageous. <br><br> -- Baroness Howe of Idlicote (House of Lords Debate, [30 April 2019](https://hansard.parliament.uk/Lords/2019-04-30/debates/A8EE53D6-D377-4C74-8802-3BB2480405DE/OnlineHarmsWhitePaper#contribution-65D64F8D-CE43-48CF-A934-56F3A43285D6))
 
 ***
-#### As reported by:
+#### Report cited by:
 * **Top10VPN** - [ISP Website Blocks: How Bad are the UK’s Web Filters?](https://www.top10vpn.com/uk-isp-blocked-websites/) (Original press release)
 * **Telegraph** - [Charities, schools and abuse support websites are being blocked by internet filters, report claims](https://www.telegraph.co.uk/technology/2019/04/24/charities-schools-abuse-support-websites-blocked-internet-filters/)
 * **Broadband Guru** - [Excessive UK ISP Internet Filters Block Access to Vital Support Sites](https://broadband.guru/2019/04/16/excessive-uk-isp-internet-filters-block-access-to-vital-support-sites/)
