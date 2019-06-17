@@ -11,6 +11,9 @@ inline: false
 * **Open Rights Group** - [BBFC age verification standard is pointless, misleading and potentially dangerous](https://www.openrightsgroup.org/press/releases/2019/org-report:-bbfc-age-verification-standard-is-pointless,-misleading-and-potentially-dangerous) (Original press release)
 * **The Independent** - [UK porn block is privacy timebomb, new report warns](https://www.independent.co.uk/life-style/gadgets-and-tech/news/uk-porn-ban-when-date-privacy-websites-vpn-a8956941.html)
 * **Forbes** - [UK Porn Block Is Just The Privacy Risk You'd Expect](https://www.forbes.com/sites/emmawoollacott/2019/06/14/uk-porn-block-is-just-the-privacy-risk-youd-expect/)
+* **The Sun** - [UK porn block is ‘privacy timebomb’ for 20million Brits, experts warn](https://www.thesun.co.uk/tech/9313115/uk-porn-block-is-privacy-timebomb-for-20million-brits-experts-warn/)
+* **Daily Mail** - [UK porn block is a 'privacy timebomb' warns watchdog](https://www.dailymail.co.uk/sciencetech/article-7153151/UK-porn-block-privacy-timebomb-watchdog-warns.html)
+* **The Register** - [Blighty's online pr0n gatekeepers are begging for a regulatory beating, says digital rights org](https://www.theregister.co.uk/2019/06/17/uk_p0rn_gatekeepers_beg_for_regulatory_beating/)
 
 ***
 This week, the Open Rights Group released new report co-authored by myself which analyses the BBFC's recently-published [_Age-verification Certificate_ (AVC) standard](https://www.ageverificationregulator.com/av-certification). The voluntary standard is intended to help inform consumers by granting a green "AV" checkmark to age verification platforms which supposedly go the extra mile to ensure the security of their data. After some analysis, however, we have concluded that the effort is functionally useless and, even worse, may actually mislead consumers.
