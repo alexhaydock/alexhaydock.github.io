@@ -4,7 +4,7 @@
 name: Alex Haydock
 email: alex@alexhaydock.co.uk
 description: > # this means to ignore newlines until "url:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Digital security and privacy consultant. Interested in user privacy, data protection & online censorship.
 footer_text: # I don't want any
 url:  # the base hostname & protocol for your site
 #baseurl: / # the subpath of your site, e.g. /blog/
