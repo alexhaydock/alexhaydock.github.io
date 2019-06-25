@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DNS Encryption is Inevitable: The Government Must Embrace It"
-date: 2019-06-20
+date: 2019-06-25
 inline: false
 ---
 <div class="img_row">
