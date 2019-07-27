@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /events/
-title: events
-description: Some of the events I have hosted or spoken at.
+title: Events
+description: A selection of digital privacy and security events I have hosted or spoken at.
 ---
 <div class="img">
     <img class="col three" src="{{ site.baseurl }}/assets/img/sitp_presentation.jpg">

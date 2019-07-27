@@ -25,18 +25,18 @@
         <!-- About -->
         <a class="page-link" href="{{ site.baseurl | prepend: site.url }}/">about</a>
 
+        <!-- Events Page -->
+        <a class="page-link" href="{{ '/events/' | prepend: site.baseurl | prepend: site.url }}">events</a>
+      
         <!-- Pages -->
-        {% for page in site.pages %}
+        <!-- {% for page in site.pages %}
           {% if page.title and page.url != "/" %}
             <a class="page-link" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">{{ page.title }}</a>
           {% endif %}
-        {% endfor %}
+        {% endfor %} -->
 
         <!-- Tech Blog -->
         <a class="page-link" href="{{ '/tech/' | prepend: site.baseurl | prepend: site.url }}">tech</a>
-
-        <!-- CV link -->
-        <!-- <a class="page-link" href="{{ '/assets/pdf/CV.pdf' | prepend: site.baseurl | prepend: site.url }}">vitae</a> -->
 
       </div>
     </nav>

@@ -30,8 +30,8 @@ contact_note: >
 # -----------------------------------------------------------------------------
 # Blog
 # -----------------------------------------------------------------------------
-blog_name: tech posts
-blog_description: A selection of various tech projects and ramblings.
+blog_name: Tech Blog
+blog_description: Various tech projects and ramblings.
 
 # Pagination
 paginate: 4

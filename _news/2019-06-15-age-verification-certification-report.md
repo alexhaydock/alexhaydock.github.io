@@ -4,7 +4,10 @@ title: "The BBFC's Age Verification security certification is useless for consum
 date: 2019-06-15
 inline: false
 ---
-> Consider for yourself whether, if you lived in Tokyo, you would want to live in a building designed and blueprinted by amateurs, but where they crashed cars into it occasionally to see if it is "safe enough". <br><br> -- [Alec Muffett](https://twitter.com/AlecMuffett/status/1121733258327285760)
+<div class="img">
+  <img class="col three" src="{{ site.baseurl }}/assets/img/bbfc-green-checkmark.png">
+</div>
+<div class="col three caption">The BBFC's green checkmark logo.</div>
 
 ***
 #### Report cited by:
@@ -17,10 +20,7 @@ inline: false
 ***
 This week, the Open Rights Group [released a new report](https://www.openrightsgroup.org/press/releases/2019/org-report:-bbfc-age-verification-standard-is-pointless,-misleading-and-potentially-dangerous) co-authored by myself which analyses the BBFC's recently-published [_Age-verification Certificate_ (AVC) standard](https://www.ageverificationregulator.com/av-certification). The voluntary standard is intended to help inform consumers by granting a green "AV" checkmark to age verification platforms which supposedly go the extra mile to ensure the security of their data. After some analysis, however, we have concluded that the effort is functionally useless and, even worse, may actually mislead consumers.
 
-<div class="img">
-  <img class="col three" src="{{ site.baseurl }}/assets/img/bbfc-green-checkmark.png">
-</div>
-<div class="col three caption">The BBFC's green checkmark logo.</div>
+> Consider for yourself whether, if you lived in Tokyo, you would want to live in a building designed and blueprinted by amateurs, but where they crashed cars into it occasionally to see if it is "safe enough". <br><br> -- [Alec Muffett](https://twitter.com/AlecMuffett/status/1121733258327285760)
 
 Some highlights from the report:
 * Enrolment into the standard is voluntary. For sensitive age verification data, why is it not the case that **all** providers are bound by these higher standards of data security?
