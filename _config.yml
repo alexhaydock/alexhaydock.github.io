@@ -2,6 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 name: Alex Haydock
+title: Alex Haydock
 email: alex@alexhaydock.co.uk
 description: > # this means to ignore newlines until "url:"
   Digital security and privacy consultant. Interested in user privacy, data protection & online censorship.
