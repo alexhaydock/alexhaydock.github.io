@@ -22,6 +22,7 @@ scholar_userid:
 orcid_id:
 medium_username: alexhaydock
 quora_username:
+pgp_key_url: /0xCC0F0336.asc
 
 contact_note: >
   I can also be contacted via <a href="https://signal.org/" target="_blank">Signal</a> for encrypted messaging. Please email me to ask for my Signal ID.
