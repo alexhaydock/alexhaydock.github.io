@@ -14,13 +14,14 @@ last_updated: # leave blank if you don't want to display last updated
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
-github_username: alexhaydock # your GitHub user name
-twitter_username: ajhdock # your Twitter handle
-linkedin_username: # your LinkedIn user name
-scholar_userid: # your Google Scholar ID
-orcid_id: # your ORCID ID
-medium_username: alexhaydock # your Medium username
-quora_username: # your Quora username
+github_username: alexhaydock
+gitlab_username: alexhaydock
+twitter_username: ajhdock
+linkedin_username:
+scholar_userid:
+orcid_id:
+medium_username: alexhaydock
+quora_username:
 
 contact_note: >
   I can also be contacted via <a href="https://signal.org/" target="_blank">Signal</a> for encrypted messaging. Please email me to ask for my Signal ID.

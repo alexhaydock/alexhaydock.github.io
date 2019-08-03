@@ -1,10 +1,12 @@
-#!/bin/sh
+#!/bin/bash
+set -xe
+if [ "$EUID" -ne 0 ]; then echo "This script requires root to issue Docker commands."; exit; fi
 
-sudo docker build -t alexhaydock .
+docker build -t alexhaydock .
 
-sudo docker run --rm -it \
+docker run --rm -it \
   --name "alexhaydock" \
-  -v "/home/a/code/alexhaydock.github.io:/opt/www" \
+  -v "/home/a/gitlab/alexhaydock.co.uk:/opt/www" \
   -p "127.0.0.1:4000:4000/tcp" \
   alexhaydock \
     bundle exec jekyll serve --incremental -H 0.0.0.0
