@@ -1,0 +1,1 @@
+v=DMARC1; p=reject; rua=mailto:pusheen-d@dmarc.report-uri.com; ruf=pusheen-d@dmarc.report-uri.com;
