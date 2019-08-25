@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+html {
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+}
+
 html, body {
   height: auto;
   min-height: 100%;
