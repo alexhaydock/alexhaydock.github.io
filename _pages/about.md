@@ -2,7 +2,7 @@
 layout: about
 permalink: /
 title: <strong>Alex</strong> Haydock
-description: Digital security and privacy consultant.
+description: Data privacy and cyberlaw consultant.
 
 profile:
   align: right

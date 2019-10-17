@@ -5,3 +5,6 @@ LABEL maintainer "Alex Haydock <alex@alexhaydock.co.uk>"
 COPY Gemfile /tmp/Gemfile
 WORKDIR /tmp
 RUN bundle install
+
+# Serve site
+WORKDIR /opt/www

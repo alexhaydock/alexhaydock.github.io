@@ -5,7 +5,7 @@ name: Alex Haydock
 title: Alex Haydock
 email: alex@alexhaydock.co.uk
 description: > # this means to ignore newlines until "url:"
-  Digital security and privacy consultant. Interested in user privacy, data protection & online censorship.
+  Data privacy and cyberlaw consultant. Interested in user privacy, data protection & online censorship.
 footer_text: # I don't want any
 url:  # the base hostname & protocol for your site
 #baseurl: / # the subpath of your site, e.g. /blog/
@@ -14,20 +14,16 @@ last_updated: # leave blank if you don't want to display last updated
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
+pgp_key_url: /0xCC0F0336.asc
+twitter_username: ajhdock
+linkedin_username: alexhaydock
 github_username: alexhaydock
 gitlab_username: alexhaydock
-twitter_username: ajhdock
-linkedin_username:
-scholar_userid:
-orcid_id:
-medium_username: alexhaydock
-quora_username:
-pgp_key_url: /0xCC0F0336.asc
+#medium_username: alexhaydock
 
+# Contact note (aka homepage footer under the social icons)
 contact_note: >
-  I can also be contacted via <a href="https://signal.org/" target="_blank">Signal</a> for encrypted messaging. Please email me to ask for my Signal ID.
-
-#google_analytics: UA-XXXXXXXXX # out your google-analytics code
+  I can also be contacted via <a href="https://signal.org/" target="_blank">Signal</a>, WhatsApp or iMessage/FaceTime for those who prefer encrypted channels.<br>Please email me for my IDs on these platforms.
 
 # -----------------------------------------------------------------------------
 # Blog
