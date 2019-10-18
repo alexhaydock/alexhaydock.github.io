@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Fix Tor Onion Services on CentOS or Fedora (without disabling SELinux!)"
+title: "Fix Tor onion services on CentOS or Fedora (without disabling SELinux!)"
 description: "a.k.a. How I abuse Docker to deal with an annoying issue in SELinux without compromising security."
 category: tech
 ---
@@ -67,21 +67,19 @@ It's very simple to create a [Dockerfile](https://docs.docker.com/engine/referen
 
 The Dockerfile below should be all that we need:
 ```
-FROM alpine:3.8
+FROM alpine
 LABEL maintainer "Alex Haydock <alex@alexhaydock.co.uk>"
 
 COPY torrc /etc/tor/torrc
 
-RUN set -xe \
-    \
-# Install Tor
-    && apk --no-cache add tor shadow \
-    \
+# Install Tor (& shadow so we can manipulate user IDs)
+RUN apk --no-cache add tor shadow
+
 # Change Tor user to a high UID that's unlikely to conflict with anything on the host
-    && usermod -u 7942 -o tor \
-    \
+RUN usermod -u 7942 -o tor
+
 # Remove the shadow package (we only needed it for the usermod command)
-    && apk del shadow
+RUN apk del shadow
 
 # Runtime settings
 USER tor

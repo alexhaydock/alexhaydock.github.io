@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Update Debian via Tor Hidden Service"
-description: "Learn how to make use of the Debian project's new Tor Onion Service repositories."
+title: "Update Debian via Tor onion service"
+description: "Learn how to make use of the Debian project's new Tor onion service repositories."
 category: tech
 ---
 This post is intended to serve as an easy guide to masking metadata when downloading updates for Debian systems. We can accomplish this by configuring our system to always update via the semi-official Debian Tor onion service mirror.

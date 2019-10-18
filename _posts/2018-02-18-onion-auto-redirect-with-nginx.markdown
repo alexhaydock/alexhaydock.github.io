@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Automatically redirect Tor users to your Onion Service using Nginx"
+title: "Automatically redirect Tor users to your onion service using Nginx"
 description: "Discover how to make sure Tor Browser users are actually using your shiny new onion service."
 category: tech
 ---

@@ -22,7 +22,9 @@ The event was very well attended — situated in a shared access-space connectin
 
 The Glass Room Experience focuses on interactive and creative ways of visualising data, and is designed for an audience who are casually passing-by. The interaction draws attention from the passing crowd, and people are encouraged to play with the pieces. The pieces help visitors to consider the amount of data they might be generating about themselves on a daily basis, and which companies might be motivated to collect it.
 
-The overall goal of the exhibit is to create thought-provoking visualisations of user data and in-depth conversations about privacy, so I was on-hand during the exhibit to talk to interested visitors about their own experiences and concerns with data privacy, and to help them with some hints and tips for regaining control.
+Some of the topics include: 'smart' devices, mobile phones, facial recognition, and the role of 'big tech' (e.g. Google, Apple, Amazon).
+
+The overall goal of the exhibit is to create thought-provoking visualisations of user data and in-depth conversations about privacy. I was on-hand during the exhibit to talk to interested visitors about their own experiences and concerns with data privacy, and to help them with some hints and tips for regaining control.
 
 <div class="img">
     <img class="col three" src="{{ site.baseurl }}/assets/img/glassroom-wide.jpg">
