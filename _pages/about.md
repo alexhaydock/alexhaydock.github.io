@@ -20,5 +20,3 @@ I currently carry out freelance consultancy work for groups and individuals who 
 I am also a Master in Law graduate with legal interests which include digital rights, civil liberties, and the regulation of technology and the internet.
 
 I sometimes speak at events and meetups for people interested in digital security and privacy. More details about these events can be found on [this page](/events).
-
-In my spare time, I tinker with computers and have been [learning photography](https://photos.alexhaydock.co.uk).

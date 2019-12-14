@@ -13,6 +13,8 @@ description: A selection of digital privacy and security events I have hosted or
 
 ***
 
+[The Great Hack: Your Data in Modern Politics](https://starandshadow.org.uk/programme/event/the-great-hack,4351/) (Newcastle, Dec 2019) -- A rapidly-organised workshop in response to the snap general election. Screened Netflix's documentary [The Great Hack](https://www.netflix.com/gb/title/80117542), and showed guests how to use the [Open Rights Group's new tool](https://action.openrightsgroup.org/who-do-political-parties-think-we-are-4) to exercise their GDPR rights to access their data from political parties.
+
 [The Glass Room Experience](https://web.archive.org/web/20191016111727/http://theglassroom.org/event/outerwest) (Newcastle, Oct 2019) -- An installation of Tactical Tech's data visualisation exhibit _The Glass Room Experience_, in conjunction with Newcastle Libraries.
 
 [Tech Tools Online](https://www.meetup.com/ORG-Norwich/events/253752588/) (Norwich, Sep 2018) -- An event explaining the Open Rights Group's technical projects, including _Data Rights Finder_ and _Blocked!_.

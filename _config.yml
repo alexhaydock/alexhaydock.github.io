@@ -17,8 +17,9 @@ last_updated: # leave blank if you don't want to display last updated
 pgp_key_url: /0xCC0F0336.asc
 twitter_username: ajhdock
 linkedin_username: alexhaydock
-github_username: alexhaydock
-gitlab_username: alexhaydock
+flickr_vanity_name: alexhaydock
+#github_username: alexhaydock
+#gitlab_username: alexhaydock
 #medium_username: alexhaydock
 
 # Contact note (aka homepage footer under the social icons)
