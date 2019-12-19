@@ -1,7 +1,9 @@
-_site
-.sass-cache
-.jekyll-metadata
-.DS_store
-.ruby-version
+*-console.log
+.DS_Store
 Gemfile.lock
-
+.jekyll-metadata
+.kitchen
+.ruby-version
+.sass-cache
+_site
+.vagrant

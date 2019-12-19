@@ -6,7 +6,7 @@ title: Contact Me
 The easiest way to get in touch with me is via email:
 
 <div class="header-bar">
-  <h3><i class="fas fa-envelope"></i> alex@alexhaydock.co.uk</h3>
+  <h4><i class="fas fa-envelope"></i> alex@alexhaydock.co.uk</h4>
 </div>
 
 <br>
