@@ -10,8 +10,12 @@ layout: default
     <!-- Post Twitter Card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="{{ site.twitter_username }}" />
-    <meta name="twitter:title" content="{{ page.title }}" />
-    <meta name="twitter:description" content="{{ page.description }}" />
+    {% if page.twittertitle %}
+      <meta name="twitter:title" content="{{ page.twittertitle }}" />
+    {% endif %}
+    {% if page.twitterdescription %}
+      <meta name="twitter:description" content="{{ page.twitterdescription }}" />
+    {% endif %}
     {% if page.twitterimage %}
       <meta name="twitter:image" content="{{ page.twitterimage | prepend: '/assets/img/' | prepend: site.baseurl | prepend: site.url }}" />
     {% endif %}
