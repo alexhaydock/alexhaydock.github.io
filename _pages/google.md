@@ -14,6 +14,7 @@ I'm only listing services here which offer zero-knowledge data storage or end-to
 
 #### Calender Alternatives
 * [ProtonCalendar](https://protonmail.com/blog/protoncalendar-security-model/) _(in development)_
+* [Tutanota Calendar](https://tutanota.com/calendar/)
 
 #### Chrome Sync Alternatives
 * [Firefox Accounts](https://www.mozilla.org/en-US/firefox/accounts/)
