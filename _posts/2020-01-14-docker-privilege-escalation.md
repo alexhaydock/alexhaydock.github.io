@@ -64,7 +64,7 @@ This also explains why so much time was able to pass between me making the broke
 
 But it gets worse. In those three weeks, I kept building on this playbook; tweaking it, adding roles, adding tasks, and, crucially, deploying it to production systems... and tweaking it, and building upon it, and deploying it some more. Until -- as I realised with a rush of horror -- I had pushed this broken change to almost every system I manage.
 
-For readers who have never met me in real life -- and have thus been spared the chore of hearing long rants about how amazing Docker is and how everything should be in containers -- I feel like it might be much needed context to explain that I _love_ containers. I love the idea of stateless, idempotent systems and infrastructure as code that makes scaling up and down a dream and migration nearly effortless. So I end up running pretty much _everything_ in containers. Normally, this works like a dream. But today it had been my downfall. The only system which had been spared from the broken config push was a single lonely Raspberry Pi connected to my stereo that does nothing but play music.
+For readers who have never met me in real life -- and have thus been spared the chore of hearing long rants about how amazing Docker is and how everything should be in containers -- I feel like it might be much needed context to explain that I _love_ containers. I love the idea of stateless, idempotent systems and infrastructure as code that makes scaling up and down a dream and migration nearly effortless. So I end up running pretty much _everything_ in containers. Normally, this works like a dream. But today it had been my downfall. Basically all of my systems use containers, so basically all of my systems were targeted by this playbook. Indeed, the only system which had been spared from the broken config push was a single lonely Raspberry Pi connected to my stereo that does nothing but play music.
 
 Okay, no problem. We can still fix this. We might not be able to use `sudo`, but we can still `su` to `root` with the root password and sort everything back out, right?
 
@@ -117,7 +117,7 @@ root@47f4da624aae:/# echo "alex ALL=(ALL:ALL) ALL" >> /etc/sudoers && visudo -cf
 Shockingly, this worked! I was able to use `sudo` again, and was able to use my newly-regained privileges to restore my group membership to the groups I had been in previously.
 
 #### Hair of the Dog
-So I could regain control on a system-by-system basis, but this wasn't going to be enough. I had automated myself into this mess, and I was determined to automate myself out of it. Could I turn this aronud and use the tools that had already stung me to fix the issue I'd caused?
+So I could regain control on a system-by-system basis, but this wasn't going to be enough. I had automated myself into this mess, and I was determined to automate myself out of it. Could I turn this around and use the tools that had already stung me to fix the issue I'd caused?
 
 I took what I had learned above, and wrapped it up [into a Docker container](https://gitlab.com/alexhaydock/getroot) to automate the privilege escalation process, and pushed it to my GitLab container registry. You can go and have a look, and build/run the container for yourself. It's the same one in the command at the top of the article, and should work on `x86_64`, `armv7l` and `aarch64` systems.
 
