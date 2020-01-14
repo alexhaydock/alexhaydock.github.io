@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Configuration (Mis)management: breaking back into my own production systems"
+title: "Configuration (mis)management: breaking back into my own production systems with Docker"
 description: "Say it with me: the <code>docker</code> group is root."
 category: tech
 ---
