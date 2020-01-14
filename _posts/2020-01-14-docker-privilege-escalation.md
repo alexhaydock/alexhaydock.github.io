@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Dangerous Docker: breaking back into my own production systems"
-description: "Say it with me: the `docker` group is root."
+title: "Configuration (Mis)management: breaking back into my own production systems"
+description: "Say it with me: the <code>docker</code> group is root."
 category: tech
 ---
 #### TL;DR
