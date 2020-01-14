@@ -8,7 +8,12 @@ layout: default
     <p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
 
     <!-- Post Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    {% if page.twittercard == "big" %}
+      <meta name="twitter:card" content="summary_large_image" />
+    {% endif %}
+    {% if page.twittercard == "small" %}
+      <meta name="twitter:card" content="summary" />
+    {% endif %}
     <meta name="twitter:site" content="{{ site.twitter_username }}" />
     {% if page.twittertitle %}
       <meta name="twitter:title" content="{{ page.twittertitle }}" />

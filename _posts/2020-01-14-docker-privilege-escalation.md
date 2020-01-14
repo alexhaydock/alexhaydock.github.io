@@ -5,7 +5,8 @@ description: "Say it with me: the <code>docker</code> group is root."
 category: tech
 twittertitle: Configuration (mis)management
 twitterdescription: Breaking back into my own production systems with Docker
-twitterimage: docker-red.png
+twitterimage: xkcd-sudo.png
+twittercard: big
 ---
 #### TL;DR
 If you somehow made it here looking for a one-line solution to give yourself `sudo` privileges when you're already a member of the `docker` group, try:
