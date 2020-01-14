@@ -122,7 +122,8 @@ So I could regain control on a system-by-system basis, but this wasn't going to 
 I took what I had learned above, and wrapped it up [into a Docker container](https://gitlab.com/alexhaydock/getroot) to automate the privilege escalation process, and pushed it to my GitLab container registry. You can go and have a look, and build/run the container for yourself. It's the same one in the command at the top of the article, and should work on `x86_64`, `armv7l` and `aarch64` systems.
 
 So now that I had a nice concise single-line way of exploiting my own systems, I could turn back to Ansible to automate the process of deploying it, as so:
-```yml
+```yaml
+{% raw %}
 - name: Find our UID on the remote system
   command: "id -g"
   register: uid
@@ -140,14 +141,15 @@ So now that I had a nice concise single-line way of exploiting my own systems, I
     name: "{{ ansible_user_id }}"
     group: "{{ ansible_user_id }}"
     groups: adm,cdrom,docker,sudo,dip,plugdev,lxd
+{% endraw %}
 ```
 
 And voilà... I tested this thoroughly of course (lessons had been learned) and then pushed it to all my systems, restoring my access and taking me right back to where I was before making my broken change a few weeks earlier, stronger and wiser.
 
 #### Lessons Learned
-* Configuration management is fantastic, as it lets you quickly push minor config changes automatically to a huge number of systems.
-* Configuration management is terrible, as it lets you quickly push minor config changes automatically to a huge number of systems.
-* RTFM, and _test your code_! Since this, I have implemented a strategy with Vagrant and Test Kitchen which allows me to test my configuration changes before I deploy them and catch any issues before they spiral out of control.
+* Configuration management is _fantastic_, as it lets you quickly push minor config changes automatically to a huge number of systems.
+* Configuration management is _terrible_, as it lets you quickly push minor config changes automatically to a huge number of systems.
+* RTFM, and _test your code_! Since this, I have implemented a strategy with [Vagrant](https://www.vagrantup.com/) and [Test Kitchen](https://github.com/test-kitchen/test-kitchen) which allows me to test my configuration changes before I deploy them and catch any issues before they spiral out of control.
 * The `docker` group is root. Don't add any users to the `docker` group who shouldn't have root access to the system.
 * I tested this on a system running SELinux and access to the `/etc/shadow` and `/etc/sudoers` files was completely blocked from inside the container. If I'd been running Fedora or CentOS instead of Ubuntu I'd probably be cursing myself right now and going through the pain of rebuilding 20+ systems, but it just goes to show that SELinux *works*! [Don't disable it](https://stopdisablingselinux.com/).
 * Further to the above, Red Hat's (fully compatible) answer to Docker is called [Podman](https://podman.io/) and doesn't require a big heavy daemon running as `root` like Docker does. This means there's no need for a specific group to allow unprivileged users to access the daemon. There isn't one.
