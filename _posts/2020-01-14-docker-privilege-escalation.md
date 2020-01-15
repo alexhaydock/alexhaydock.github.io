@@ -64,7 +64,7 @@ This also explains why so much time was able to pass between me making the broke
 
 But it gets worse. In those three weeks, I kept building on this playbook; tweaking it, adding roles, adding tasks, and, crucially, deploying it to production systems... and tweaking it, and building upon it, and deploying it some more. Until -- as I realised with a rush of horror -- I had pushed this broken change to almost every system I manage.
 
-For readers who have never met me in real life -- and have thus been spared the chore of hearing long rants about how amazing Docker is and how everything should be in containers -- I feel like it might be much needed context to explain that I _love_ containers. I love the idea of stateless, idempotent systems and infrastructure as code that makes scaling up and down a dream and migration nearly effortless. So I end up running pretty much _everything_ in containers. Normally, this works like a dream. But today it had been my downfall. Basically all of my systems use containers, so basically all of my systems were targeted by this playbook. Indeed, the only system which had been spared from the broken config push was a single lonely Raspberry Pi connected to my stereo that does nothing but play music.
+For readers who have never met me in real life -- and have thus been spared the chore of hearing long rants about how amazing Docker is and how everything should be in containers -- I feel like it might be much needed context to explain that I _love_ containers. I love the idea of stateless, idempotent systems and infrastructure as code that makes scaling up and down a dream and migration nearly effortless. So I end up running pretty much _everything_ in containers. Normally, this works like a dream. But today it had been my downfall. Basically all of my systems use containers, so basically all of my systems had been targeted by this playbook. Indeed, the only system which had been spared from the broken config push was a single lonely Raspberry Pi connected to my stereo that does nothing but play music.
 
 Okay, no problem. We can still fix this. We might not be able to use `sudo`, but we can still `su` to `root` with the root password and sort everything back out, right?
 
@@ -75,7 +75,7 @@ I collapsed into my chair with a sigh and resigned myself to pondering my next m
 #### Regaining Control
 If you read forums and support pages for Docker, you'll find some _very_ strong opinions about whether it's ever sensible to add users to the `docker` group. Those in favour will tell you that adding a user to the `docker` group makes it much easier to manage Docker containers, as it gets rid of the need for nagging password prompts every time you want to do anything at all with Docker or containers. But on the other hand, opponents will tell you that doing so is a serious security risk, as it effectively provides the otherwise unprivileged user unchecked access to the Docker socket without a password.
 
-The latter concern is particularly important in multi-user deployments. For myself, though, I was the only (human) user on all these systems, so I didn't consider the concerns to be much of a problem for my threat model. I could trust _myself_ at least, surely?<sup>(Apparently not)</sup>
+The latter concern is particularly important in multi-user deployments. For myself, though, I was the only (human) user on all these systems, so I didn't consider the concerns to be much of a problem for my threat model. I could trust _myself_ at least, surely? <sup>(Apparently not)</sup>
 
 Either way, I had taken the decision to add my user to the `docker` group. Sure, I had broken all the other groups in the process, but our Ansible playbook had at least dutifully added our users to the `docker` group as requested. So what does this mean for us?
 
@@ -83,10 +83,10 @@ Well, full access to the Docker socket gives us the ability to interact with Doc
 
 So I fired up a quick test to confirm whether my thinking was on the right track:
 ```sh
-docker run --rm -it -v /etc/shadow:/opt/etc/shadow alpine:latest
+docker run --rm -it -v /etc/shadow:/host/etc/shadow alpine:latest
 ```
 
-The above command is quite simple and just mounts the `/etc/shadow` file to the location `/opt/etc/shadow` inside an Alpine Linux container.
+The above command is quite simple and just mounts the `/etc/shadow` file to the location `/host/etc/shadow` inside an Alpine Linux container.
 
 When we try to view the shadow file _on the host_, we get:
 ```sh
@@ -96,7 +96,7 @@ cat: /etc/shadow: Permission denied
 
 But when we try _inside our new container_, we can read the file just fine, mounted from the host:
 ```sh
-root@47f4da624aae:/# cat /opt/etc/shadow
+root@47f4da624aae:/# cat /host/etc/shadow
 root:!:18242:0:99999:7:::
 daemon:*:18186:0:99999:7:::
 bin:*:18186:0:99999:7:::
@@ -107,14 +107,18 @@ So because we can create Docker containers, and run as `root` _within_ the conta
 
 Could we edit the shadow file directly to enable the root account and set a password? This was my first thought but, after some ~~investigation~~ Stack Overflow, [it doesn't seem like a good idea](https://unix.stackexchange.com/questions/190241/why-should-you-never-edit-the-etc-shadow-file-directly).
 
-So let's try something a bit cleaner and see whether we can edit the `/etc/sudoers` file that I mentioned earlier:.
+So let's try something a bit cleaner and see whether we can mount and edit the `/etc/sudoers` file that I mentioned earlier:
 ```sh
-root@47f4da624aae:/# echo "alex ALL=(ALL:ALL) ALL" >> /etc/sudoers && visudo -cf /etc/sudoers
-/etc/sudoers: parsed OK
-/etc/sudoers.d/README: parsed OK
+docker run --rm -it -v /etc/sudoers:/host/etc/sudoers alpine:latest
 ```
 
-Shockingly, this worked! I was able to use `sudo` again, and was able to use my newly-regained privileges to restore my group membership to the groups I had been in previously.
+```sh
+root@47f4da624aae:/# echo "alex ALL=(ALL:ALL) ALL" >> /host/etc/sudoers && visudo -cf /host/etc/sudoers
+/host/etc/sudoers: parsed OK
+/host/etc/sudoers.d/README: parsed OK
+```
+
+Fortunately, this worked! I was able to use `sudo` again, and was able to use my newly-regained privileges to restore my group membership to the groups I had been in previously.
 
 #### Hair of the Dog
 So I could regain control on a system-by-system basis, but this wasn't going to be enough. I had automated myself into this mess, and I was determined to automate myself out of it. Could I turn this around and use the tools that had already stung me to fix the issue I'd caused?
