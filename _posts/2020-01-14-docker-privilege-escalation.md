@@ -70,12 +70,12 @@ Okay, no problem. We can still fix this. We might not be able to use `sudo`, but
 
 Well, no. On Ubuntu systems the root account does not have a password set by default, which effectively locks the account. The idea is that instead of running anything as `root`, commands are individually granted privileges by using `sudo`. At this point I have realised that I am effectively locked out of all of these boxes. I'm left without any real way of doing _anything_ which might require privilege. On all of my production systems. Ouch.
 
-I collapsed into my chair with a sigh and resigned myself to pondering my next move while listening to R.E.M's [It's the End of the World as We Know It](https://www.youtube.com/watch?v=8OyBtMPqpNY) on my Pi stereo... the only system I hadn't broken.
+I collapsed into my chair with a sigh and resigned myself to pondering my next move while listening to R.E.M's [It's the End of the World as We Know It](https://www.youtube.com/watch?v=8OyBtMPqpNY) on my Pi stereo... the only working system I had left.
 
 #### Regaining Control
 If you read forums and support pages for Docker, you'll find some _very_ strong opinions about whether it's ever sensible to add users to the `docker` group. Those in favour will tell you that adding a user to the `docker` group makes it much easier to manage Docker containers, as it gets rid of the need for nagging password prompts every time you want to do anything at all with Docker or containers. But on the other hand, opponents will tell you that doing so is a serious security risk, as it effectively provides the otherwise unprivileged user unchecked access to the Docker socket without a password.
 
-The latter concern is particularly important in multi-user deployments. For myself, though, I was the only (human) user on all these systems, so I didn't consider the concerns to be much of a problem for my threat model. I could trust _myself_ at least, surely?
+The latter concern is particularly important in multi-user deployments. For myself, though, I was the only (human) user on all these systems, so I didn't consider the concerns to be much of a problem for my threat model. I could trust _myself_ at least, surely?<sup>(Apparently not)</sup>
 
 Either way, I had taken the decision to add my user to the `docker` group. Sure, I had broken all the other groups in the process, but our Ansible playbook had at least dutifully added our users to the `docker` group as requested. So what does this mean for us?
 
