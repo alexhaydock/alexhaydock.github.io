@@ -68,9 +68,9 @@ For readers who have never met me in real life -- and have thus been spared the 
 
 Okay, no problem. We can still fix this. We might not be able to use `sudo`, but we can still `su` to `root` with the root password and sort everything back out, right?
 
-Well, no. On Ubuntu systems the root account does not have a password set by default, which effectively locks the account. The idea is that instead of running anything as `root`, individual actions are given run with privilege by regular users using `sudo`. At this point I have realised that I am effectively locked out of all of these boxes. I'm left without any real way of doing _anything_ which might require privilege. On all of my production systems. Ouch.
+Well, no. On Ubuntu systems the root account does not have a password set by default, which effectively locks the account. The idea is that instead of running anything as `root`, commands are individually granted privileges by using `sudo`. At this point I have realised that I am effectively locked out of all of these boxes. I'm left without any real way of doing _anything_ which might require privilege. On all of my production systems. Ouch.
 
-I collapsed into my chair with a sigh and resigned myself to pondering my next move while listening to R.E.M's [It's the End of the World as We Know It](https://www.youtube.com/watch?v=8OyBtMPqpNY)... on the only working system I had left.
+I collapsed into my chair with a sigh and resigned myself to pondering my next move while listening to R.E.M's [It's the End of the World as We Know It](https://www.youtube.com/watch?v=8OyBtMPqpNY) on my Pi stereo... the only system I hadn't broken.
 
 #### Regaining Control
 If you read forums and support pages for Docker, you'll find some _very_ strong opinions about whether it's ever sensible to add users to the `docker` group. Those in favour will tell you that adding a user to the `docker` group makes it much easier to manage Docker containers, as it gets rid of the need for nagging password prompts every time you want to do anything at all with Docker or containers. But on the other hand, opponents will tell you that doing so is a serious security risk, as it effectively provides the otherwise unprivileged user unchecked access to the Docker socket without a password.
