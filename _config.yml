@@ -4,8 +4,7 @@
 name: Alex Haydock
 title: Alex Haydock
 email: alex@alexhaydock.co.uk
-description: > # this means to ignore newlines until "url:"
-  Data privacy and cyberlaw consultant. Interested in user privacy, data protection & online censorship.
+description: Data privacy and cyberlaw consultant. Interested in user privacy, data protection & online censorship.
 footer_text: # I don't want any
 url:  # the base hostname & protocol for your site
 #baseurl: / # the subpath of your site, e.g. /blog/
@@ -14,10 +13,10 @@ last_updated: # leave blank if you don't want to display last updated
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
-pgp_key_url: /0xCC0F0336.asc
+#pgp_key_url: /0xCC0F0336.asc
 twitter_username: ajhdock
 linkedin_username: alexhaydock
-flickr_vanity_name: alexhaydock
+#flickr_vanity_name: alexhaydock
 #github_username: alexhaydock
 #gitlab_username: alexhaydock
 #medium_username: alexhaydock
@@ -89,34 +88,6 @@ plugins:
     - jekyll-paginate
     - jekyll/scholar
     - jemoji
-
-# Jekyll-Scholar
-
-# To begin re-using the Publications tab, I'd need to re-add publications.md and
-# the _bibliography folder.
-
-scholar:
-
-  last_name: Haydock
-
-  style: apa
-  locale: en
-
-  sort_by: year
-  order: descending
-
-  source: /_bibliography/
-  bibliography: papers.bib
-  bibliography_template: bib
-
-  replace_strings: true
-  join_strings: true
-
-  details_dir: bibliography
-  details_layout: bibtex.html
-  details_link: Details
-
-  query: "@*"
 
 # -----------------------------------------------------------------------------
 # Other settings (these affect the variables used in hemline.html)
