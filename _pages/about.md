@@ -2,7 +2,7 @@
 layout: about
 permalink: /
 title: <strong>Alex</strong> Haydock
-description: Data privacy and cyberlaw consultant.
+description: Information security and Privacy Enhancing Technologies (PET) consultant.
 
 profile:
   align: right
@@ -13,10 +13,12 @@ social: true
 ---
 Hi, I’m Alex.
 
-I am an information security and data protection consultant with a particular interest in user privacy, data protection & online censorship.
+I am an information security and Privacy Enhancing Technologies (PET) consultant with a particular interest in user privacy and data protection.
 
-I currently carry out freelance consultancy work for groups and individuals who require the expertise of someone familiar with technology law as well as with the tech which it regulates. I was previously the Legal Officer for the [Open Rights Group](https://www.openrightsgroup.org/), in their London office.
+I consult directly with businesses and individuals looking to put together materials explaining complex information security concepts in an accessible manner, and also with non-profits and civil society groups who are interested in technology public policy.
 
-I am also a Master in Law graduate with legal interests which include digital rights, civil liberties, and the regulation of technology and the internet.
+Most of my work involves taking complex technical topics and transforming them to meet the needs of specific audiences.
 
-I sometimes speak at events and meetups for people interested in digital security and privacy. More details about these events can be found on [this page](/events).
+So if you need someone who is able to take complex privacy and security concepts and transform them for your specific audience, then please [get in contact](/contact)!
+
+I also [sometimes speak at events](/events) and meetups for people interested in digital security and privacy.
