@@ -5,7 +5,7 @@ description: "86.7.5.309"
 category: tech
 twittertitle: "Dear Hollywood, Stop using fake IP addresses!"
 twitterdescription: "86.7.5.309"
-twitterimage: ip_poi.jpg
+twitterimage: ip_tool.png
 twittercard: big
 ---
 So if you're my kind of nerd then you've spotted it a hundred times already... You're just getting to love a TV show or movie and then they drop an unforgiveable bombshell: the obviously fake IP address.
