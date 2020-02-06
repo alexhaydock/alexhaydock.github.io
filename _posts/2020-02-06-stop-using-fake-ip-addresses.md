@@ -32,7 +32,7 @@ This is [confirmed by Snopes](https://www.snopes.com/fact-check/867-5309-jenny/)
 <div class="col three caption"><a href="https://www.imdb.com/title/tt0113957/">The Net (1995)</a></div>
 <br>
 
-At the time Tommy Tuetone's track was released, telephone companies in the US had already been encouraging TV and movie producers to use the 555 prefix for fictional numbers for nearly two decades. According to Wikipedia, some early examples include [The Second Time Around (1961)](https://www.imdb.com/title/tt0055421/), which used 555-3485, and [Panic in Year Zero! (1961)](https://www.imdb.com/title/tt0056331/), which used 555-2106.
+At the time Tommy Tuetone's track was released, telephone companies in the US had already been encouraging TV and movie producers to use the prefix `555-` for fictional numbers for nearly two decades. According to Wikipedia, some early examples include [The Second Time Around (1961)](https://www.imdb.com/title/tt0055421/), which used 555-3485, and [Panic in Year Zero! (1961)](https://www.imdb.com/title/tt0056331/), which used 555-2106.
 
 In the UK, Ofcom maintain a detailed list of non-routable UK numbers which can be used for TV and movie productions, including specific geographic area codes for extra realism. Indeed, this blog post and tool were inspired by a tool developed by Neil Brown, which will [generate a number from this range](https://neilzone.co.uk/number/) for you to use.
 
