@@ -1,0 +1,12 @@
+build:
+  stage: build 
+  image: 
+    name: docker/compose
+    entrypoint: ["/bin/sh", "-c"]
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+  services:
+    - docker:dind
+  script:
+    - docker build . -t "${CI_REGISTRY_IMAGE}/hello:${CI_COMMIT_SHORT_SHA}"
+    - docker images
