@@ -8,5 +8,6 @@ build:
   services:
     - docker:dind
   script:
-    - docker build . -t "${CI_REGISTRY_IMAGE}/hello:${CI_COMMIT_SHORT_SHA}"
-    - docker images
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker build -t "${CI_REGISTRY_IMAGE}" .
+    - docker push "${CI_REGISTRY_IMAGE}"
