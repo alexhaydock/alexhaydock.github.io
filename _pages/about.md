@@ -22,3 +22,5 @@ Most of my work involves taking complex technical topics and transforming them t
 So if you need someone who is able to take complex privacy and security concepts and transform them for your specific audience, then please [get in contact](/contact)!
 
 I also [sometimes speak at events](/events) and meetups for people interested in digital security and privacy.
+
+For my open source and tech work, I am active on both [GitLab](https://gitlab.com/alexhaydock) and [GitHub](https://github.com/alexhaydock).
