@@ -28,7 +28,7 @@ sudo usermod -a -G docker $(whoami)
 #### Configure Transmission
 Before we go starting Transmission and expecting everything to just work, we need to create a directory and put our config file in it.
 
-Transmission ships with a default `settings.json` file for configuration, but I have included a mildly-modified version [here](/static/transmission-default-settings.json.txt) for convenience. This version makes a few changes that make life with Docker easier, and should make a good starting point to work from.
+Transmission ships with a default `settings.json` file for configuration, but I have included a mildly-modified version [here](/assets/static/settings.json.txt) for convenience. This version makes a few changes that make life with Docker easier, and should make a good starting point to work from.
 
 Create a directory somewhere and save this file as `settings.json`. Take note of this location. It will permanently hold your Transmission config,
 
@@ -81,7 +81,7 @@ version: "2.3"
 # IDs that you want Transmission to run under.
 services:
   transmission:
-    image: alexhaydock/transmission-daemon
+    image: registry.gitlab.com/alexhaydock/docker-transmission:latest
     container_name: transmission
     environment:
       USERID: "1000"
