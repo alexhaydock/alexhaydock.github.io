@@ -1,5 +1,4 @@
 FROM ubuntu:20.04 as builder
-LABEL maintainer "Alex Haydock <alex@alexhaydock.co.uk>"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -36,4 +35,8 @@ RUN bundle install
 RUN bundle exec jekyll build
 
 FROM nginx:stable-alpine
+LABEL maintainer "Alex Haydock <alex@alexhaydock.co.uk>"
+LABEL name "alexhaydock.co.uk"
+LABEL version "1.0"
+
 COPY --from=builder /tmp/alexhaydock.co.uk/_site /usr/share/nginx/html
