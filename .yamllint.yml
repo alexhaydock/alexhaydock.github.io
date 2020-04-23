@@ -1,0 +1,6 @@
+---
+extends: default
+
+rules:
+  line-length: disable  # I'm not really bothered about this particular linter complaint
+...

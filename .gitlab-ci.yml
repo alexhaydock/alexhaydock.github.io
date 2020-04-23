@@ -1,3 +1,24 @@
+---
+stages:
+  - .pre
+  - build
+  - test
+
+# Lint all Dockerfiles in this repo (any Dockerfile, recursively)
+docker-lint:
+  image: projectatomic/dockerfile-lint
+  stage: .pre
+  script:
+    - for i in $(find . -name "Dockerfile" -or -name "Dockerfile*"); do dockerfile_lint -f "${i}"; done
+
+# Lint all YAML files in this repo (any yaml file, recursively)
+yaml-lint:
+  image: registry.gitlab.com/alexhaydock/ci-linter-images/yamllint
+  stage: .pre
+  script:
+    - for i in $(find . -name "*.yml" -or -name "*.yaml"); do yamllint "${i}"; done
+
+# Docker buildx for multiplatform
 buildx:
   image: docker:stable-git
   stage: .pre
@@ -14,12 +35,20 @@ buildx:
     - git clone git://github.com/docker/buildx ./docker-buildx
     - docker build --platform=local -o . ./docker-buildx
 
+# Run build
 build:
   image: docker:stable
   stage: build
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
+  variables:
+    GENERIC_TAG: "$CI_REGISTRY_IMAGE"
+    # We want to set something more specific than ":latest" as
+    # the tag, mostly for Klar's purposes in the test stage.
+    SPECIFIC_TAG: "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA"
+    BUILD_ARCHES: "linux/amd64,linux/arm64,linux/arm/v7"
+  retry: 2
   before_script:
     - mkdir -p ~/.docker/cli-plugins
     - mv buildx ~/.docker/cli-plugins/docker-buildx
@@ -27,4 +56,19 @@ build:
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker buildx create --use --name mybuilder
-    - docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 --push -t $CI_REGISTRY_IMAGE .
+    - docker buildx build --push --platform $BUILD_ARCHES -t $GENERIC_TAG -t $SPECIFIC_TAG .
+
+# Klar container vuln/security scanning
+# See: https://docs.gitlab.com/ce/user/application_security/container_scanning/
+include:
+  - template: Container-Scanning.gitlab-ci.yml
+
+# Use "fetch" as the Git strategy for the Clair/Klar test step.
+# This gives the vuln scanner access to the Dockerfile so it can
+# provide us with remediation steps if it does find any issues.
+container_scanning:
+  variables:
+    CI_APPLICATION_REPOSITORY: "$CI_REGISTRY_IMAGE"
+    CI_APPLICATION_TAG: "$CI_COMMIT_SHA"
+    GIT_STRATEGY: fetch
+...
