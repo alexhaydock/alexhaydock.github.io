@@ -26,6 +26,10 @@ I'm only listing services here which offer zero-knowledge data storage or end-to
 * [X Cloud](https://internxt.com/cloud)
 * [pCloud](https://www.pcloud.com/)
 
+#### Microsoft OneNote Alternatives
+Not quite a Google product but now requires a Microsoft Account so alternatives are worth exploring.
+* [Standard Notes](https://standardnotes.org/)
+
 #### Other Links
 * [PrivacyTools.io](https://www.privacytools.io/)
 * The [/r/degoogle](https://www.reddit.com/r/degoogle/) subreddit.
