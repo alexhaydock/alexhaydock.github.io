@@ -7,7 +7,7 @@ This Privacy Notice applies to visitors of this site. For policies applying to o
 
 #### Overview
 * I do not hold any information about you as a visitor; nor do I want to.
-* For extra certainty, I operate an [onion service](https://www.torproject.org/docs/onion-services.html.en) version of this site which can be accessed anonymously. Please use the onion icon (🧅) in the top bar to access this.
+* For extra certainty, I operate an [onion service](https://www.torproject.org/docs/onion-services.html.en) version of this site which can be accessed anonymously.
 
 #### Analytics
 * I do not currently use any analytics code (Google Analytics, Matomo, etc) on this site.
