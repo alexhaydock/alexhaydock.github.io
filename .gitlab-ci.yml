@@ -1,74 +1,30 @@
----
-stages:
-  - .pre
-  - build
-  - test
+# Based on the official .gitlab-ci.yml Docker template from GitLab.
+# Will build only the default (x86_64) container from a default-named 'Dockerfile'.
 
-# Lint all Dockerfiles in this repo (any Dockerfile, recursively)
-docker-lint:
-  image: projectatomic/dockerfile-lint
-  stage: .pre
-  script:
-    - for i in $(find . -name "Dockerfile" -or -name "Dockerfile*"); do dockerfile_lint -f "${i}"; done
-
-# Lint all YAML files in this repo (any yaml file, recursively)
-yaml-lint:
-  image: registry.gitlab.com/alexhaydock/ci-linter-images/yamllint
-  stage: .pre
-  script:
-    - for i in $(find . -name "*.yml" -or -name "*.yaml"); do yamllint "${i}"; done
-
-# Docker buildx for multiplatform
-buildx:
-  image: docker:stable-git
-  stage: .pre
-  variables:
-    GIT_STRATEGY: none
-  artifacts:
-    paths:
-      - buildx
-    expire_in: 1 hour
-  services:
-    - docker:stable-dind
-  script:
-    - export DOCKER_BUILDKIT=1
-    - git clone git://github.com/docker/buildx ./docker-buildx
-    - docker build --platform=local -o . ./docker-buildx
-
-# Run build
-build:
-  image: docker:stable
+docker-build-master:
+  # Official docker image.
+  image: docker:latest
   stage: build
   services:
-    - name: docker:stable-dind
-      command: ["--experimental"]
-  variables:
-    GENERIC_TAG: "$CI_REGISTRY_IMAGE"
-    # We want to set something more specific than ":latest" as
-    # the tag, mostly for Klar's purposes in the test stage.
-    SPECIFIC_TAG: "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA"
-    BUILD_ARCHES: "linux/amd64,linux/arm64,linux/arm/v7"
-  retry: 2
+    - docker:dind
   before_script:
-    - mkdir -p ~/.docker/cli-plugins
-    - mv buildx ~/.docker/cli-plugins/docker-buildx
-    - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker buildx create --use --name mybuilder
-    - docker buildx build --push --platform $BUILD_ARCHES -t $GENERIC_TAG -t $SPECIFIC_TAG .
+    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
+    - docker push "$CI_REGISTRY_IMAGE"
+  only:
+    - master
 
-# Klar container vuln/security scanning
-# See: https://docs.gitlab.com/ce/user/application_security/container_scanning/
-include:
-  - template: Container-Scanning.gitlab-ci.yml
-
-# Use "fetch" as the Git strategy for the Clair/Klar test step.
-# This gives the vuln scanner access to the Dockerfile so it can
-# provide us with remediation steps if it does find any issues.
-container_scanning:
-  variables:
-    CI_APPLICATION_REPOSITORY: "$CI_REGISTRY_IMAGE"
-    CI_APPLICATION_TAG: "$CI_COMMIT_SHA"
-    GIT_STRATEGY: fetch
-...
+docker-build:
+  # Official docker image.
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
+  except:
+    - master
