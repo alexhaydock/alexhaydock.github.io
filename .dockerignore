@@ -1,7 +1,2 @@
-# Files
-README.md
-CNAME
-*.sh
-
 # Jekyll built dir
 _site
