@@ -8,8 +8,8 @@ The easiest way to get in touch with me is via email, at: <a href="mailto:alex@a
 You can also find me on a number of other platforms, listed below.
 
 #### Direct Communications
-* Signal: (Preferred) - Please email to ask for my phone number.
-* iMessage / FaceTime: {{ site.masked_email }}
+* Signal (Preferred): Please email to ask for my phone number.
+* iMessage / FaceTime: alex@alexhaydock.co.uk
 
 #### Public Platforms
 * GitHub: [alexhaydock](https://github.com/alexhaydock)
