@@ -14,13 +14,12 @@ last_updated:  # leave blank if you don't want to display last updated
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
-# pgp_key_url: /0xCC0F0336.asc
-twitter_username: ajhdock
+# Make sure these names have a corresponding entry in _includes/social.html so
+# they actually get used and appear on the main page.
+github_username: alexhaydock
+gitlab_username: alexhaydock
 linkedin_username: alexhaydock
-# flickr_vanity_name: alexhaydock
-# github_username: alexhaydock
-# gitlab_username: alexhaydock
-# medium_username: alexhaydock
+twitter_username: ajhdock
 
 # Contact note (aka homepage footer under the social icons)
 contact_note: >

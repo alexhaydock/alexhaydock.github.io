@@ -1,13 +1,10 @@
 <div class="social">
   <span class="contacticon center">
-    <a href="mailto:{{ site.email | encode_email }}"><i class="fas fa-envelope"></i></a>
-    {% if site.pgp_key_url %}<a href="{{ site.pgp_key_url }}" target="_blank" title="PGP Key"><i class="fa fa-key"></i></a>{% endif %}
+    {% if.site.email %}<a href="mailto:{{ site.email | encode_email }}" title="Email Me"><i class="fas fa-envelope"></i></a>{% endif %}
     {% if site.twitter_username %}<a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>{% endif %}
-    {% if site.medium_username %}<a href="https://medium.com/@{{ site.medium_username }}" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>{% endif %}
     {% if site.linkedin_username %}<a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>{% endif %}
     {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>{% endif %}
     {% if site.gitlab_username %}<a href="https://gitlab.com/{{ site.gitlab_username }}" target="_blank" title="GitLab"><i class="fab fa-gitlab"></i></a>{% endif %}
-    {% if site.flickr_vanity_name %}<a href="https://www.flickr.com/photos/{{ site.flickr_vanity_name }}" target="_blank" title="GitLab"><i class="fab fa-flickr"></i></a>{% endif %}
   </span>
 
   <div class="col three caption">
