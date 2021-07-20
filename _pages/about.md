@@ -17,6 +17,6 @@ Previously I provided security and privacy consulting services via this site. I'
 
 Day-to-day, I spend my time working with Splunk, Ansible, and all the bells and whistles that go into maintaining, administering, and monitoring performant "big data" deployments.
 
-I love containers, immutable infrastructure, eBPF, and auditd.
+I love containers, [ComplianceAsCode](https://github.com/ComplianceAsCode), immutable infrastructure, [BPF](https://www.brendangregg.com/blog/2021-06-15/bpf-internals.html), and auditd.
 
-I am sometimes active on both [GitLab](https://gitlab.com/alexhaydock) and [GitHub](https://github.com/alexhaydock).
+I am sometimes active on both [GitHub](https://github.com/alexhaydock) and [GitLab](https://gitlab.com/alexhaydock).
